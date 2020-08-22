@@ -1,16 +1,20 @@
 {
-  "name": "chrome",
+  "name": "expressts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "typescript": "^3.9.7"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howardlee93/darkness.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howardlee93/darkness/issues"
+  },
+  "homepage": "https://github.com/howardlee93/darkness#readme"
 }
