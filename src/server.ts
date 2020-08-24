@@ -2,43 +2,41 @@ import {Data} from './interfaces/index';
 
 const express = require( "express" );
 const cors = require('cors');
-const app = express();
 const routes = require('./routes/index');
 
 const port = 5000; // default port to listen
 
 // define a route handler for the default home page
-app.get( "/", ( req, res ) => {
-    res.send( "Hello world!" );
-} );
-
-// start the Express server
-app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
-} );
 
 
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use("api", routes);
-
-
-//testing reading 
-
-
-const fs = require("fs");
-
-// Read users.json file 
-// fs.readFile("data.json", function(err: any, data: string) { 
-      
-//     // Check for errors 
-//     if (err) throw err; 
+class Server {
    
-//     // Converting to JSON 
-//     const users = JSON.parse(data); 
-      
-//     console.log(users); // Print users  
-// }); 
+    public app: any;
+
+    constructor(){
+        this.app = express();
+        this.config();
+        this.routes();
+        
+    }
+    public routes() {
+        throw new Error("Method not implemented.");
+        this.app.get( "/", ( req, res ) => {
+            res.send( "Hello world!" );
+        } );
+        
+        // start the Express server
+        this.app.listen( port, () => {
+            console.log( `server started at http://localhost:${ port }` );
+        } );
+        
+    }
+    public config() {
+        throw new Error("Method not implemented.");
+        this.app.use(cors());
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
+
+    }
+};
+
