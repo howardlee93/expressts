@@ -9,14 +9,17 @@ router.get("/test", (req, res) => res.json({ msg: "This is the test route" }));
 //get all 
 router.get('/', (req, res)=> {
     UTIL.read
-    .then(res => res.json(res));
+    .then(res => res.json());
 
 });
 
 //get by some param
 
 router.get("/", (req, res) =>{
-    req.body.params
+    let query = req.body.params;
+    UTIL.read(query)
+    .then(res => res.json());
+    
 });
 
 

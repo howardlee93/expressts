@@ -1,24 +1,29 @@
 import {Data} from './interfaces/index';
 
-const express = require( "express" );
+// import * as Express from 'express';
+// import cors from 'cors';
+const express = require('express');
+
 const cors = require('cors');
-const routes = require('./routes/index');
+
+const routes = require('./routes/routes');
 
 const port = 5000; // default port to listen
 
-// define a route handler for the default home page
-
+// define a route hander for the default home page
 
 class Server {
    
-    public app: any;
-
+    public app //= Express.application;
+    
+s
     constructor(){
         this.app = express();
         this.config();
         this.routes();
         
-    }
+    };
+
     public routes() {
         throw new Error("Method not implemented.");
         this.app.get( "/", ( req, res ) => {
@@ -26,11 +31,12 @@ class Server {
         } );
         
         // start the Express server
-        this.app.listen( port, () => {
+        this.app.listen( 5000, () => {
             console.log( `server started at http://localhost:${ port }` );
         } );
         
-    }
+    };
+
     public config() {
         throw new Error("Method not implemented.");
         this.app.use(cors());
@@ -39,4 +45,7 @@ class Server {
 
     }
 };
+
+
+// Server.start();
 
