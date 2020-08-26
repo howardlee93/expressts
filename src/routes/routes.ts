@@ -1,54 +1,53 @@
-const express = require('express');
-const fs = require('fs');
-const router = express.Router();
+
+
+import * as express from 'express';
+
 
 import * as UTIL from '../util';
 
 
-export const PostRoutes = () =>{
+export class PostRoutes{
+    public router;
+
+    public queryByParam(req: express.Request, res: express.Response){
+        const param = req.params;
+
+    };
+
+    public update(req: express.Request, res: express.Response){
+
+
+    };
+
+    public add (req: express.Request, res: express.Response){
+
+    };
+
+    public all(req: express.Request, res: express.Response){
+        const data = UTIL.read();
+        return res.status(200).json({ data, message: 'success' });
+
+    };
+
+    public delete(req: express.Request, res: express.Response){
+
+    };
 
 
 
-router.get("/test", (req, res) => res.json({ msg: "This is the test route" }));
+    public routes(){
+        this.router.get("/");
+        this.router.get("/");
+        this.router.post("/");
+        this.router.post("/");
+        this.router.delete("/");
+    };
 
-//get all 
-router.get('/', (req, res)=> {
-    UTIL.read
-    .then(res => res.json());
+    constructor(){
+        this.router = express.Router();
+        this.routes();
 
-});
+    };
 
-//get by some param
+}
 
-router.get("/", (req, res) =>{
-    let query = req.body.params;
-    UTIL.read(query)
-    .then(res => res.send());
-    
-});
-
-
-//update 
-router.post("/", (req, res)=>{
-    req.body.params;
-
-}) 
-
-//adds
-router.post("/", (req, res)=>{
-
-    
-});
-
-
-router.delete("/", (req, res)=>{
-
-});
-
-};
-
-
-
-
-
-module.exports = router;
