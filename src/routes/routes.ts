@@ -1,53 +1,46 @@
 
-
 import * as express from 'express';
+// import * as UTIL from '../util';
 
+export class Routes{
+    public router = express.Router();
 
-import * as UTIL from '../util';
+    public routes(){
+        this.router.get("/", this.all );
+        this.router.get("/:slug", this.queryByParam);
+        this.router.post("/", this.add);
+        this.router.put("/", this.update);
+        this.router.delete("/", this.delete);
 
-
-export class PostRoutes{
-    public router;
-
+    }
+  
     public queryByParam(req: express.Request, res: express.Response){
-        const param = req.params;
-
+        const param = req.params;        
+        throw new Error("Method not implemented.");
     };
 
     public update(req: express.Request, res: express.Response){
-
-
+        throw new Error("Method not implemented.");
     };
 
     public add (req: express.Request, res: express.Response){
-
+        throw new Error("Method not implemented.");
     };
 
     public all(req: express.Request, res: express.Response){
-        const data = UTIL.read();
-        return res.status(200).json({ data, message: 'success' });
-
+        res.json({ message: 'GET /user request received' });
     };
 
     public delete(req: express.Request, res: express.Response){
+        throw new Error("Method not implemented.");
 
-    };
-
-
-
-    public routes(){
-        this.router.get("/");
-        this.router.get("/");
-        this.router.post("/");
-        this.router.post("/");
-        this.router.delete("/");
     };
 
     constructor(){
-        this.router = express.Router();
         this.routes();
+    }
+};
 
-    };
 
-}
+
 
