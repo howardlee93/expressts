@@ -4,6 +4,11 @@ const router = express.Router();
 
 import * as UTIL from '../util';
 
+
+export const PostRoutes = () =>{
+
+
+
 router.get("/test", (req, res) => res.json({ msg: "This is the test route" }));
 
 //get all 
@@ -18,7 +23,7 @@ router.get('/', (req, res)=> {
 router.get("/", (req, res) =>{
     let query = req.body.params;
     UTIL.read(query)
-    .then(res => res.json());
+    .then(res => res.send());
     
 });
 
@@ -39,6 +44,10 @@ router.post("/", (req, res)=>{
 router.delete("/", (req, res)=>{
 
 });
+
+};
+
+
 
 
 

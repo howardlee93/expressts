@@ -1,12 +1,6 @@
 
 const fs = require("fs");
 
-// Read users.json file 
-
-
-// const writeFile = fs.writeFile();
-
-
 export const read = fs.readFile("src/data.json", function(err: string, data: string) { 
       
     // Check for errors 
@@ -16,6 +10,8 @@ export const read = fs.readFile("src/data.json", function(err: string, data: str
     const users = JSON.parse(data); 
       
     console.log(users); // Print users  
+    return users;
+
 }); 
 
 export const write = fs.writeFile("src/data.json", function(err, data){
